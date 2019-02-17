@@ -41,8 +41,11 @@ class Timer {
     func stop() {
         timer?.invalidate()
         timer = nil
-        closure(0, 0, 0)
         seconds = 0
+    }
+
+    func reset() {
+        closure(0, 0, 0)
     }
     
     // MARK: - Private methods
