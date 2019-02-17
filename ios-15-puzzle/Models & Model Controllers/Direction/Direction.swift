@@ -49,7 +49,7 @@ extension Direction {
         return directions.randomElement()?.value
     }
     
-    static func generateNonRepeating(_ number: UInt) -> [Direction] {
+    static func generate(_ number: UInt) -> [Direction] {
         var directions = [Direction]()
         directions += [random()]
         
