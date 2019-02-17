@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 // MARK: - Swipe gesture extnesion that iOS target
 extension GameScene {
@@ -39,9 +40,16 @@ extension GameScene {
         
         let isValidSwipe = gameBoard?.resolveSwipe(for: direction) {
             GameScene.isSwipeLocked = false
+            FeedbackGenerator.generate(for: .medium)
         }
         if let isValidSwipe = isValidSwipe, isValidSwipe {
             incrementMovesNumber()
+
+            // Swipe is valid here, which means we can check whether the puzzle was solved or not
+            if let isSolved = self.gameBoard?.isCorrect(), isSolved {
+                print("Puzzle is Solved: ", isSolved)
+                self.overlayManager?.state = .puzzleSolved
+            }
         } else {
             GameScene.isSwipeLocked = false
         }
