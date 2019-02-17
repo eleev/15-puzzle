@@ -13,7 +13,7 @@ struct NodeFactory {
     static func produce(of type: NodeType, position: CGPoint) -> GenericNodeType {
         switch type {
         case .slot(let number):
-            let node = SlotNode(number: number, size: Constants.cellSize)
+            let node = CellNode(number: number, size: Constants.cellSize)
             node.position = position
             return node
         }
