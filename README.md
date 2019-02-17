@@ -11,6 +11,17 @@
 # ✍️ About
 🧩 Classic 15 Puzzle game for iOS.
 
+# 📺 Demo 
+Please wait while the `.gif` files are loading...
+
+<img src="/assets/15_puzzle-ipad-pro.gif" height="49%"> <img src="/assets/15_puzzle-iphone-xs.gif" height="49%">
+
+# 🕹 Constrols
+- **Swipe** anywhere to move the cells
+- **Tap** ↶ button to shuffle the cells
+- When you solve the puzzle, you will see the corresponding overlay dialog
+- When time exceeds (01:00:00 / 1 hour) or the number of moves will reach it's maximum (10.000) the game will be over
+
 # 👻 Features
 - [x] Supports both `iPhone` & `iPad`
 - [x] Moves counter
@@ -29,8 +40,6 @@
 - [ ] Missing **solver**: can be implemented by using `A*` or `BFS` algorithms. Since it's an `NP-complete` algorithm, it needs to be carefully designed and tested (performance implications)
 - [ ] Wish to add **macOS** target
 - [ ] Was not able to implement shader **CRT** effect for cell's screes because of the time restrictions
-
-# 📺 Demo 
 
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
