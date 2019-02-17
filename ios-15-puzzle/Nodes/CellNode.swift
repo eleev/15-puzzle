@@ -1,5 +1,5 @@
 //
-//  SlotNode.swift
+//  CellNode.swift
 //  ios-15-puzzle
 //
 //  Created by Astemir Eleev on 14/02/2019.
@@ -8,16 +8,15 @@
 
 import SpriteKit
 
-class SlotNode: SKSpriteNode, Numberable, Slidable {
+class CellNode: SKSpriteNode, Numberable, Slidable {
     
     // MARK: - Properties
     
     var number: UInt
-    private var label: SKLabelNode?
     
     // MARK: - Initializers
     
-    init(number: UInt, size: CGSize, textureName: String = "platformIndustrial_032") {
+    init(number: UInt, size: CGSize, textureName: String = Constants.SlotNode.texture) {
         self.number = number
         
         super.init(texture: SKTexture(imageNamed: textureName), color: .clear, size: size)
@@ -25,8 +24,7 @@ class SlotNode: SKSpriteNode, Numberable, Slidable {
         let label = prepareLabel()
         addChild(label)
         
-        self.label = label
-        zPosition = ZPosition.cell.rawValue
+        zPosition = Constants.ZPosition.cell.rawValue
         name = getStringRepresentation()
     }
     
@@ -40,13 +38,18 @@ class SlotNode: SKSpriteNode, Numberable, Slidable {
         let label = SKLabelNode(text: getStringRepresentation())
         label.verticalAlignmentMode = .center
         label.horizontalAlignmentMode = .center
-        // TIP:
-        // These constants are potentially dangerous, they need to be refactored
-        label.position.x -= 10
-        label.position.y += 10
-        label.fontColor = .white
-        label.fontSize = 50
-        label.zPosition = ZPosition.cellLabel.rawValue
+
+        let shift = Constants.SlotNode.Font.shift
+        label.position.x -= shift
+        label.position.y += shift
+        
+        if let fontName = label.fontName {
+            label.fontName = fontName + Constants.SlotNode.Font.type
+        }
+        
+        label.fontColor = Constants.SlotNode.Font.color
+        label.fontSize = Constants.SlotNode.Font.size
+        label.zPosition = Constants.ZPosition.cellLabel.rawValue
         return label
     }
 }
