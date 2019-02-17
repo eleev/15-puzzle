@@ -98,7 +98,7 @@ class GameScene: SKScene {
     private func shuffleGameBoard(for times: UInt, compeltion: @escaping () -> Void = { /*  default, empty closure */ }) {
         view?.isUserInteractionEnabled = false
         
-        let directions = Direction.generateNonRepeating(times)
+        let directions = Direction.generate(times)
         NodeAnimator.ShuffleNode.fadeOut(node: shuffleButton)
 
         gameBoard?.shuffle(using: directions, iteration: {
