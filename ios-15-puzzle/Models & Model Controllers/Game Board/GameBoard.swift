@@ -25,6 +25,14 @@ class GameBoard {
     /// Empty slot index pair is a tuple that holds the current, two dimensional location for the empty slot. All the futher calculations, for swiping cells, are based on the latest location of the empty cell (see `resolveSwipe` method)
     private var emptySlotIndexPair = (i: 0, j: 0)
  
+    var slideAnimationDuration: TimeInterval = Constants.SlideAnimation.defaultDuration {
+        didSet {
+            if slideAnimationDuration < 0.0 {
+                slideAnimationDuration = Constants.SlideAnimation.defaultDuration
+            }
+        }
+    }
+    
     // MARK: - Static properties
     
     private static let SLOT_NAME = "Slot Node"
@@ -70,7 +78,7 @@ class GameBoard {
         
         func prepareEmptySlot() {
             // Represents an empty node
-            let emptyCell = SlotNode(number: 0, size: .zero)
+            let emptyCell = CellNode(number: 0, size: .zero)
             emptyCell.position = nodeSlots.last?.position ?? .zero
             swipableCells[i].append(emptyCell)
             
@@ -177,7 +185,7 @@ private extension GameBoard {
         
         let emptyPosition = empty.position
         empty.position = cell.position
-        cell.slide(to: emptyPosition, completion: completion)
+        cell.slide(to: emptyPosition, for: slideAnimationDuration, completion: completion)
     }
     
     func performHorizontalSwipe(for index: Int, by operation: SwipeOperation, completion: @escaping () -> Void) {
@@ -193,7 +201,7 @@ private extension GameBoard {
         
         let emptyPosition = empty.position
         empty.position = cell.position
-        cell.slide(to: emptyPosition, completion: completion)
+        cell.slide(to: emptyPosition, for: slideAnimationDuration, completion: completion)
     }
     
 }
