@@ -20,6 +20,13 @@ struct NodeAnimator {
         node.run(SKAction.fadeAlpha(to: alpha, duration: duration))
     }
     
+    static func disappear(node: SKSpriteNode, for duration: TimeInterval) {
+        let alpha = SKAction.fadeAlpha(to: 0.0, duration: duration)
+        let remove = SKAction.removeFromParent()
+        let sequecne = SKAction.sequence([alpha, remove])
+        node.run(sequecne)
+    }
+    
     struct ShuffleNode {
         
         static func fadeOut(node: SKSpriteNode?) {
