@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+/// Manages the presentation of overlay menues such as Puzzle Solved or Game Over
 class OverlayManager {
     
     // MARK: - Enum types

@@ -15,8 +15,8 @@ struct Constants {
     // Since the game for 16 cell nodes, the upper limit is the 15 (16 - 1). This constant will be used in node generation, as well
     static let numberOfNodes: UInt = 15
     
-    static let shuffleCellsInitially: UInt = 10
-    static let shuffleCellsByTap: UInt = 70
+    static let shuffleCellsInitially: UInt = 15
+    static let shuffleCellsByTap: UInt = 400
     
     static let shuffleButtonName = "Shuffle Button"
     static let movesLabelName = "Moves Label"
@@ -25,11 +25,11 @@ struct Constants {
     static let movesIncrementor = 1
     
     static let shuffleButtonDimLevel: CGFloat = 0.35
-    static let shuffleButtonDimAnimationDuration = 0.5
+    static let shuffleButtonDimAnimationDuration = 0.25
     
     struct SlideAnimation {
         static let defaultDuration = 0.2
-        static let fastShufflingDuration = 0.1
+        static let fastShufflingDuration = 0.0
     }
     
     struct OverlayManager {
@@ -48,7 +48,8 @@ struct Constants {
         struct Font {
             static let shift: CGFloat = 10
             static let size: CGFloat = 48
-            static let type = "-Medium"
+            static let name = "HelveticaNeue"
+            static let type = "-Regular"
             static let color: SKColor = .white
         }
         static let texture = "platformIndustrial_032"

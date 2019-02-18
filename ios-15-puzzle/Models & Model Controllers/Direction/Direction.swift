@@ -44,7 +44,6 @@ extension Direction {
     
     static func random(excluding direction: Direction) -> Direction? {
         var directions: [String : Direction] = ["up" : .up, "down" : .down, "left" : .left, "right" : .right]
-        directions.removeValue(forKey: direction.rawValue)
         directions.removeValue(forKey: direction.opposite().rawValue)
         return directions.randomElement()?.value
     }

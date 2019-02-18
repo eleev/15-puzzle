@@ -43,10 +43,8 @@ class CellNode: SKSpriteNode, Numberable, Slidable {
         label.position.x -= shift
         label.position.y += shift
         
-        if let fontName = label.fontName {
-            label.fontName = fontName + Constants.SlotNode.Font.type
-        }
-        
+        label.fontName = Constants.SlotNode.Font.name + Constants.SlotNode.Font.type
+
         label.fontColor = Constants.SlotNode.Font.color
         label.fontSize = Constants.SlotNode.Font.size
         label.zPosition = Constants.ZPosition.cellLabel.rawValue

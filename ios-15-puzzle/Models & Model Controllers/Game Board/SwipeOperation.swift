@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Incapsulates and abstracts the supported swiping operations such as addition and substraction
 enum SwipeOperation {
     case adding(Int)
     case substracting(Int)

@@ -8,6 +8,7 @@
 
 import CoreGraphics
 
+/// Produces nodes based on their type at the specified position
 struct NodeFactory {
     
     static func produce(of type: NodeType, position: CGPoint) -> GenericNodeType {
