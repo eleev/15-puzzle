@@ -36,6 +36,7 @@
 		A92202DC22188644007A4295 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92202DB22188644007A4295 /* Timer.swift */; };
 		A94393A722193B61009BF7B4 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A94393A622193B61009BF7B4 /* GameOverScene.sks */; };
 		A94941242217FB0D00C1BFD8 /* SwipeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94941232217FB0D00C1BFD8 /* SwipeOperation.swift */; };
+		A99896EE2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99896ED2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift */; };
 		A99F7E48221894860084A34B /* PuzzleSolvedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A99F7E47221894860084A34B /* PuzzleSolvedScene.sks */; };
 		A9DE71262215EBB0004D002D /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE71252215EBB0004D002D /* CellNode.swift */; };
 		A9F3EC5A22194B8700B16740 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3EC5922194B8700B16740 /* OverlayManager.swift */; };
@@ -85,6 +86,7 @@
 		A92202DB22188644007A4295 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A94393A622193B61009BF7B4 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		A94941232217FB0D00C1BFD8 /* SwipeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOperation.swift; sourceTree = "<group>"; };
+		A99896ED2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiallyOrderedNumberGenerator.swift; sourceTree = "<group>"; };
 		A99F7E47221894860084A34B /* PuzzleSolvedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PuzzleSolvedScene.sks; sourceTree = "<group>"; };
 		A9DE71252215EBB0004D002D /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
 		A9F3EC5922194B8700B16740 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
@@ -111,9 +113,10 @@
 		A91C505622181675008C66AE /* Generator */ = {
 			isa = PBXGroup;
 			children = (
-				A91F97962216A3D100B4F062 /* NumberGenerator.swift */,
 				A91C505722181686008C66AE /* NumberGeneratorType.swift */,
+				A91F97962216A3D100B4F062 /* NumberGenerator.swift */,
 				A91C5059221816A5008C66AE /* OrderedNumberGeneratorMock.swift */,
+				A99896ED2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				A91F979F2216CF7500B4F062 /* GameBoardError.swift in Sources */,
 				A91C506222182914008C66AE /* FeedbackGenerator.swift in Sources */,
 				A91F97992216A65000B4F062 /* Constants.swift in Sources */,
+				A99896EE2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift in Sources */,
 				A91C505A221816A5008C66AE /* OrderedNumberGeneratorMock.swift in Sources */,
 				A91F97A5221706B600B4F062 /* NodeFactory.swift in Sources */,
 				A91F97892216A26400B4F062 /* Direction.swift in Sources */,
