@@ -55,6 +55,7 @@ class GameScene: SKScene {
         // NOTE: The following commented code needs to be removed
         // Mock number generator for testing purposes
 //        defaultGenerator = OrderedNumberGeneratorMock()
+//        defaultGenerator = PartiallyOrderedNumberGenerator()
         
         do {
             gameBoard = try GameBoard(scene: self, numberGenerator: defaultGenerator)
@@ -63,7 +64,7 @@ class GameScene: SKScene {
             print(error)
         }
         
-        shuffleGameBoard(for: Constants.shuffleCellsInitially)
+        shuffleGameBoard(for: Constants.shuffleCellsInitially, enableFeedback: true)
     }
     
     func incrementMovesNumber() {
@@ -89,20 +90,20 @@ class GameScene: SKScene {
         }
     }
     
-    private func shuffleGameBoard(for times: UInt) {
-        shuffleGameBoard(for: times) { [weak self] in
+    private func shuffleGameBoard(for times: UInt, enableFeedback shouldFeedback: Bool) {
+        shuffleGameBoard(for: times, enableFeedback: shouldFeedback) { [weak self] in
             self?.updateTimeLabel()
         }
     }
     
-    private func shuffleGameBoard(for times: UInt, compeltion: @escaping () -> Void = { /*  default, empty closure */ }) {
+    private func shuffleGameBoard(for times: UInt, enableFeedback shouldFeedback: Bool, compeltion: @escaping () -> Void = { /*  default, empty closure */ }) {
         view?.isUserInteractionEnabled = false
         
         let directions = Direction.generate(times)
         NodeAnimator.ShuffleNode.fadeOut(node: shuffleButton)
 
         gameBoard?.shuffle(using: directions, iteration: {
-            FeedbackGenerator.generate(for: .light)
+            if shouldFeedback { FeedbackGenerator.generate(for: .light) }
         }, completion: { [weak self] in
             self?.view?.isUserInteractionEnabled = true
             NodeAnimator.ShuffleNode.fadeIn(node: self?.shuffleButton)
@@ -126,7 +127,7 @@ extension GameScene {
             resetMoves()
             
             gameBoard?.slideAnimationDuration = Constants.SlideAnimation.fastShufflingDuration
-            shuffleGameBoard(for: Constants.shuffleCellsByTap)
+            shuffleGameBoard(for: Constants.shuffleCellsByTap, enableFeedback: false)
             return
         }
     }
