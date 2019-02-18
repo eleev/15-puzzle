@@ -19,10 +19,10 @@ class GameBoard {
     private var generator: NumberGeneratorType
     private weak var scene: SKScene?
     
-    // The square root is needed in a number of calculations, in order to avoid expensive calculation that may lead to O(n * 2) computation complexity. Particularly, the `indexBoundary` property is used in conversion of nodes from one dimensional form to two dimensioal array. Working with a two dimensional array grethly simplifies the cell swiping operations
+    // The square root is needed in a number of calculations, in order to avoid expensive calculation that may lead to O(n * 2) computation complexity. Particularly, the `indexBoundary` property is used in conversion of nodes from one dimensional form to two dimensional array. Working with a two dimensional array greatly simplifies the cell swiping operations
     private let indexBoundary = Int(sqrt(Double(Constants.numberOfNodes + 1)))
     
-    /// Empty slot index pair is a tuple that holds the current, two dimensional location for the empty slot. All the futher calculations, for swiping cells, are based on the latest location of the empty cell (see `resolveSwipe` method)
+    /// Empty slot index pair is a tuple that holds the current, two dimensional location for the empty slot. All the further calculations, for swiping cells, are based on the latest location of the empty cell (see `resolveSwipe` method)
     private var emptySlotIndexPair = (i: 0, j: 0)
  
     var slideAnimationDuration: TimeInterval = Constants.SlideAnimation.defaultDuration {
@@ -37,7 +37,7 @@ class GameBoard {
     
     private static let SLOT_NAME = "Slot Node"
     
-    // MARK: - Initializes
+    // MARK: - Initializers
     
     init(scene: SKScene, numberGenerator: NumberGeneratorType) throws {
         self.generator = numberGenerator
@@ -101,7 +101,7 @@ class GameBoard {
         return nil
     }
     
-    /// Resolves all the movement for O(n) time by applying swap function for the nodes
+    /// Resolves all the movement for O(1) time by applying swap function for the nodes
     func resolveSwipe(for direction: Direction, completion: @escaping () -> Void) -> Bool {
         var hasPerformedSwipe = false
         let shift = 1
@@ -137,8 +137,9 @@ class GameBoard {
         return hasPerformedSwipe
     }
     
-    /// Evaluates whether the puzzle is solved or not
-    /// Time complexity in works case is O(n - 1) (when puzzle is solved), otherwise, the amortized time complexity is around O(log n)
+    /// Evaluates whether the puzzle is solved or not.
+    /// Iterates over each element and makes sure that the previous element is smaller than the next one (n - 1 < n) == true for each element. If all the cells satisfy to this condition that indicates that the puzzle is solved.
+    /// Time complexity in worst case is O(n - 1) (when puzzle is solved), otherwise, the amortized time complexity is around O(log n)
     func isCorrect() -> Bool {
         let incrementor = 1
         var i = 0, j = incrementor
@@ -149,12 +150,12 @@ class GameBoard {
             let previousCell = swipableCells[previous][j - incrementor]
             let currentCell = swipableCells[previous][j]
             
-            // If all the comparisons were corrent and we reached the end of the array, and the last element is the empty cell, then the puzzle is solved
+            // If all the comparisons were correct, we reached the end of the array, and the last element is the empty cell, then the puzzle is solved
             if previous == decrementedIndexBoundary, j == decrementedIndexBoundary, currentCell.number == 0 {
                 return true
             }
      
-            // Make sure that the previous element is less than the current one, that makes the order ascending, which eventually leads to the corrent solution, if all the elements are ordered in this manner
+            // Make sure that the previous element is less than the current one, that makes the order ascending, which eventually leads to the correct solution, if all the elements are ordered in this manner
             // Another check is if the previous cell contains the empty node, which may never lead to the resolution of the puzzle, so we exit early if the test fails
             guard previousCell.number < currentCell.number, previousCell.number != 0 else {
                 return false
@@ -163,6 +164,8 @@ class GameBoard {
             if j == decrementedIndexBoundary {
                 j = incrementor
                 i += incrementor
+                
+                guard currentCell.number < swipableCells[i][j].number else { return false }
             } else { j += incrementor }
         }
         return true
@@ -208,17 +211,20 @@ private extension GameBoard {
 
 // MARK: - Shuffle functionality
 extension GameBoard {
+    
+    /// Shuffles cells the specified number of times
     func shuffle(iterations: UInt8) {
         if iterations == 0 { return }
         let randomDirection = Direction.random()
         
         let result = resolveSwipe(for: randomDirection) { [weak self] in
-            // Make a resursive call as soon as the shuffle operation was completed, and make sure that the iterations count is decremented
+            // Make a recursive call as soon as the shuffle operation was completed, and make sure that the iterations count is decremented
             self?.shuffle(iterations: iterations - 1)
         }
         if !result { shuffle(iterations: iterations - 1) }
     }
     
+    /// Shuffles cells with respoect to the specified `Direction` array
     func shuffle(using directions: [Direction],
                  iteration: @escaping () -> Void = { /* default, empty closure */ },
                  completion: @escaping () -> Void) {
