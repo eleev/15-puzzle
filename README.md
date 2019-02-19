@@ -38,10 +38,9 @@ Please wait while the `.gif` files are loading...
 - [ ] Only **portrait** mode 
 - [ ] Game **timer** works even when the app is in background (for a while). Ideally it needs to be paused/resumed when entering/resuming the app
 - [ ] Missing **unit tests** coverage, despite the possibility to test most of the code
-- [ ] Ideally, the in-game state needs to be modelled by using **state machines** (`playing`, `shuffling`, `game over` and `puzzle solved` states, and when **solver** is implemented a new state for `solving` needs to be modelled as well)
+- [ ] Ideally, the in-game state needs to be modelled by **state machines** (`playing`, `shuffling`, `game over` and `puzzle solved` states, and when **solver** is implemented a new state for `solving` needs to be modelled as well)
 - [ ] Missing **solver**: can be implemented by using `A*` or `BFS` algorithms. Since it's an `NP-complete` algorithm, it needs to be carefully designed and tested (performance implications)
-- [ ] Wish to add **macOS** target
-- [ ] **CRT** shader effect for cell's screes
+- [ ] Add **macOS** target
 
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
