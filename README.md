@@ -6,7 +6,7 @@
 
 ![](logo-15_puzzle.png)
 
-**Last Update: 18/February/2019.**
+**Last Update: 19/February/2019.**
 
 # ✍️ About
 🧩 Classic 15 Puzzle game for iOS.
@@ -39,7 +39,7 @@ Please wait while the `.gif` files are loading...
 - [ ] Ideally, the in-game state needs to be modelled by using **state machines** (`playing`, `shuffling`, `game over` and `puzzle solved` states, and when **solver** is implemented a new state for `solving` needs to be modelled as well)
 - [ ] Missing **solver**: can be implemented by using `A*` or `BFS` algorithms. Since it's an `NP-complete` algorithm, it needs to be carefully designed and tested (performance implications)
 - [ ] Wish to add **macOS** target
-- [ ] Was not able to implement shader **CRT** effect for cell's screes because of the time restrictions
+- [ ] **CRT** shader effect for cell's screes
 
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
