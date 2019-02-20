@@ -1,14 +1,14 @@
-# ios-15-puzzle [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# 15-puzzle [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![Framework](https://img.shields.io/badge/framework-SpriteKit-red.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
+**Last Update: 20/February/2019.**
+
 ![](logo-15_puzzle.png)
 
 ### If you like the project, please give it a star ⭐ It will show the creator your appreciation and help others to discover the repo.
-
-**Last Update: 19/February/2019.**
 
 # ✍️ About
 🧩 Classic 15 Puzzle game for iOS.
