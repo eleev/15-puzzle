@@ -13,6 +13,12 @@ class GameBoard {
     
     // MARK: - Properties
     
+    lazy private var correctSolution: [UInt] = {
+        var solution: [UInt] = Array((1...15))
+        solution += [0]
+        return solution
+    }()
+    
     private(set) var nodeSlots: [SKNode]
     private(set) var swipableCells = [[GenericNodeType]](repeating: [], count: Int(Constants.numberOfNodes + 1))
     
@@ -142,30 +148,18 @@ class GameBoard {
     /// Time complexity in worst case is O(n - 1) (when puzzle is solved), otherwise, the amortized time complexity is around O(log n)
     func isCorrect() -> Bool {
         let incrementor = 1
-        var i = 0, j = incrementor
-        let decrementedIndexBoundary = indexBoundary - incrementor
-        
-        for _ in incrementor..<swipableCells.count {
+        var i = 0, j = 0
+        let decrementedIndexBoundary = indexBoundary
+
+        for index in 0..<swipableCells.count {
             let previous = i
-            let previousCell = swipableCells[previous][j - incrementor]
             let currentCell = swipableCells[previous][j]
             
-            // If all the comparisons were correct, we reached the end of the array, and the last element is the empty cell, then the puzzle is solved
-            if previous == decrementedIndexBoundary, j == decrementedIndexBoundary, currentCell.number == 0 {
-                return true
-            }
-     
-            // Make sure that the previous element is less than the current one, that makes the order ascending, which eventually leads to the correct solution, if all the elements are ordered in this manner
-            // Another check is if the previous cell contains the empty node, which may never lead to the resolution of the puzzle, so we exit early if the test fails
-            guard previousCell.number < currentCell.number, previousCell.number != 0 else {
-                return false
-            }
+            guard correctSolution[index] == currentCell.number else { return false }
             
             if j == decrementedIndexBoundary {
                 j = incrementor
                 i += incrementor
-                
-                guard currentCell.number < swipableCells[i][j].number else { return false }
             } else { j += incrementor }
         }
         return true
