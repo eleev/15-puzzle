@@ -4,7 +4,7 @@
 [![Framework](https://img.shields.io/badge/framework-SpriteKit-red.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 20/February/2019.**
+**Last Update: 22/February/2019.**
 
 ![](logo-15_puzzle.png)
 
@@ -16,9 +16,9 @@
 # 📺 Demo 
 Please wait while the `.gif` files are loading...
 
-<img src="/assets/15_puzzle-ipad-pro.gif" height="49%"> <img src="/assets/15_puzzle-iphone-xs.gif" height="49%">
+<img src="/assets/15_puzzle-ipad-pro.gif" width="61%"> <img src="/assets/15_puzzle-iphone-xs.gif" width="37.7%">
 
-# 🕹 Constrols
+# 🕹 Controls
 - **Swipe** anywhere to move the cells
 - **Tap** ↶ button to shuffle the cells
 - When you solve the puzzle, you will see the corresponding overlay dialog
