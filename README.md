@@ -4,7 +4,7 @@
 [![Framework](https://img.shields.io/badge/framework-SpriteKit-red.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 22/February/2019.**
+**Last Update: 23/February/2019.**
 
 ![](logo-15_puzzle.png)
 
