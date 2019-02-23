@@ -14,7 +14,7 @@ class GameBoard {
     // MARK: - Properties
     
     lazy private var correctSolution: [UInt] = {
-        var solution: [UInt] = Array((1...15))
+        var solution: [UInt] = Array((1...Constants.numberOfNodes))
         solution += [0]
         return solution
     }()
