@@ -1,8 +1,8 @@
 # 15-puzzle [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-[![Language](https://img.shields.io/badge/language-Swift_5.2-orange.svg)]()
-[![Framework](https://img.shields.io/badge/framework-SpriteKit-red.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
+[![Language](https://img.shields.io/badge/Language-Swift_5.2-orange.svg)]()
+[![Framework](https://img.shields.io/badge/Framework-SpriteKit-red.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)]()
 
 **Last Update: 04/June/2020.**
 
