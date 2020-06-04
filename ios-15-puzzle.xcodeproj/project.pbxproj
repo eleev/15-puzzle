@@ -34,6 +34,7 @@
 		A91F97A5221706B600B4F062 /* NodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F97A4221706B600B4F062 /* NodeFactory.swift */; };
 		A91F97A7221706C800B4F062 /* NodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F97A6221706C800B4F062 /* NodeAnimator.swift */; };
 		A92202DC22188644007A4295 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92202DB22188644007A4295 /* Timer.swift */; };
+		A9424AF22489460B00DD4AB2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A9424AF12489460A00DD4AB2 /* README.md */; };
 		A94393A722193B61009BF7B4 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A94393A622193B61009BF7B4 /* GameOverScene.sks */; };
 		A94941242217FB0D00C1BFD8 /* SwipeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94941232217FB0D00C1BFD8 /* SwipeOperation.swift */; };
 		A99896EE2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99896ED2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift */; };
@@ -58,7 +59,7 @@
 		A91C505C221816E9008C66AE /* Direction+SwipeGestureInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Direction+SwipeGestureInitializer.swift"; sourceTree = "<group>"; };
 		A91C506122182914008C66AE /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		A91C506322183A5D008C66AE /* GameScene-iPad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "GameScene-iPad.sks"; sourceTree = "<group>"; };
-		A91EBE4F2215E65700C62DB4 /* ios-15-puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-15-puzzle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A91EBE4F2215E65700C62DB4 /* Disarmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disarmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91EBE522215E65700C62DB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A91EBE542215E65700C62DB4 /* GameScene-iPhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "GameScene-iPhone.sks"; sourceTree = "<group>"; };
 		A91EBE582215E65700C62DB4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		A91F97A4221706B600B4F062 /* NodeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeFactory.swift; sourceTree = "<group>"; };
 		A91F97A6221706C800B4F062 /* NodeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeAnimator.swift; sourceTree = "<group>"; };
 		A92202DB22188644007A4295 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		A9424AF12489460A00DD4AB2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A94393A622193B61009BF7B4 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		A94941232217FB0D00C1BFD8 /* SwipeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOperation.swift; sourceTree = "<group>"; };
 		A99896ED2219E258002CA968 /* PartiallyOrderedNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiallyOrderedNumberGenerator.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A91F978522168CB400B4F062 /* .gitignore */,
+				A9424AF12489460A00DD4AB2 /* README.md */,
 				A91EBE512215E65700C62DB4 /* ios-15-puzzle */,
 				A91EBE6C2215E65800C62DB4 /* ios-15-puzzleTests */,
 				A91EBE502215E65700C62DB4 /* Products */,
@@ -151,7 +154,7 @@
 		A91EBE502215E65700C62DB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A91EBE4F2215E65700C62DB4 /* ios-15-puzzle.app */,
+				A91EBE4F2215E65700C62DB4 /* Disarmer.app */,
 				A91EBE692215E65800C62DB4 /* ios-15-puzzleTests.xctest */,
 			);
 			name = Products;
@@ -306,7 +309,7 @@
 			);
 			name = "ios-15-puzzle";
 			productName = "ios-15-puzzle";
-			productReference = A91EBE4F2215E65700C62DB4 /* ios-15-puzzle.app */;
+			productReference = A91EBE4F2215E65700C62DB4 /* Disarmer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A91EBE682215E65800C62DB4 /* ios-15-puzzleTests */ = {
@@ -378,6 +381,7 @@
 				A91EBE632215E65800C62DB4 /* LaunchScreen.storyboard in Resources */,
 				A91F978622168CB400B4F062 /* .gitignore in Resources */,
 				A91C506422183A5D008C66AE /* GameScene-iPad.sks in Resources */,
+				A9424AF22489460B00DD4AB2 /* README.md in Resources */,
 				A94393A722193B61009BF7B4 /* GameOverScene.sks in Resources */,
 				A99F7E48221894860084A34B /* PuzzleSolvedScene.sks in Resources */,
 			);
@@ -581,7 +585,7 @@
 		A91EBE732215E65800C62DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Bordered";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5W8256FV33;
 				INFOPLIST_FILE = "ios-15-puzzle/Info.plist";
@@ -590,8 +594,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "eleev.astemir.ios-15-puzzle";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "eleev.astemir.ios-disarmer";
+				PRODUCT_NAME = Disarmer;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -600,7 +605,7 @@
 		A91EBE742215E65800C62DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Bordered";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5W8256FV33;
 				INFOPLIST_FILE = "ios-15-puzzle/Info.plist";
@@ -609,8 +614,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "eleev.astemir.ios-15-puzzle";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "eleev.astemir.ios-disarmer";
+				PRODUCT_NAME = Disarmer;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
